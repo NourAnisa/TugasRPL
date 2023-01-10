@@ -1,0 +1,16 @@
+{% extends "./base.html" %}
+{% block title %} 
+    {{ content.title_page }}
+{% endblock %}
+{% block content %}
+<div class="card border-0">
+    <div class="card-body border-0">
+        <img src="./assets/favicon.ico" alt="logo" class="img-thumbnail border-0"> S E A R C H
+        
+        <form action="{{ url_for('dod_search') }}" method="GET">
+            <input type="text" class="form-control pt-3 pb-3" name="keyword" placeholder="Search Jurnal or Article">
+            <button type="submit" class="btn btn-primary btn-block my-1"><i class="bi bi-search"></i> Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "./baseadmin.html" %}
+{% block title %} 
+    {{ content.title_page }}
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <div class="text-center">
+            <!-- <img src="./assets/favicon.ico" alt="logo" class="img-thumbnail border-0">  -->
+            L O G I N &nbsp;&nbsp;&nbsp;P A G E
+        </div>
+
+        <hr>
+        <form method="POST" action="{{ url_for('process_login') }}">
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert alert-warning" role="alert">
+                        <ul class="list-group list-group-flush bg-transparent">
+                            {% for message in messages %}
+                                <li class="list-group-item bg-transparent"">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <div class="my-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+            </div>
+            <div class="my-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <div class="my-3">
+                <button type="submit" class="btn btn-primary mb-3">L o g i n</button>
+                <a href="{{ url_for('home')}}" class="btn btn-danger mb-3">C a n c e l</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

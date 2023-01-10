@@ -1,0 +1,19 @@
+<div class="card border-0 bg-transparent">
+    <div class="card-body">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <span class="nav-link disabled"> Menu </span>
+                <hr class="m-0 p-0">
+            </li>
+            <li class="nav-item my-1">
+                <a class="nav-link {{ 'bg-info text-white rounded' if 'dashboard' in request.base_url.split('/') else '' }}" aria-current="page" href="{{ url_for('administrator_index') }}">Dashboard</a>
+            </li>
+            <li class="nav-item my-1">
+                <a class="nav-link {{ 'bg-info text-white rounded' if 'scrapping' in request.base_url.split('/') else '' }} " aria-current="page" href="{{ url_for('administrator_scrapping') }}">Scrapping</a>
+            </li>
+            <li class="nav-item my-1">
+                <a class="nav-link {{ 'bg-info text-white rounded' if 'data' in request.base_url.split('/') else '' }} " aria-current="page" href="{{ url_for('administrator_data') }}">Data</a>
+            </li>
+        </ul>
+    </div>
+</div>
